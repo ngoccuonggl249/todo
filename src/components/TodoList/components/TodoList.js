@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import { connect } from 'react-redux'
 import { removeTaskTodo } from '../../../App/redux/action'
+import _ from 'lodash'
 
 const TodoList = ({todo, removeTaskTodo}) => {
 
@@ -12,12 +13,12 @@ const TodoList = ({todo, removeTaskTodo}) => {
   return (
     <Fragment>
     {
-      todo.list.map(task =>
+      _.map(todo.tasks, (task =>
         <div>
           {task.content}
           <button onClick={() => onRemoveTask(task)}>x</button>
         </div>
-      )
+      ))
     }
     </Fragment>
   )

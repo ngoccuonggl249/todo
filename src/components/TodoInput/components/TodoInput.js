@@ -7,7 +7,7 @@ const TodoInput = ({todo, setTodoList}) => {
 
   const keyPressed = (event) => {
     if (event.key === "Enter") {
-      setTodoList(todo.list.push({
+      setTodoList(todo.tasks.push({
         id: Date.now(),
         content: task,
         status: 'active',

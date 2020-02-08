@@ -2,7 +2,7 @@ import _ from 'lodash'
 import {SET_TODO_LIST, REMOVE_TASK_TODO} from './action'
 
 const initState = {
-  list: [],
+  tasks: [],
 }
 
 export default function TodoReducer (state = initState, action) {
@@ -10,11 +10,11 @@ export default function TodoReducer (state = initState, action) {
     case SET_TODO_LIST:
       return _.assign({}, state, action.payload)
     case REMOVE_TASK_TODO:
-      let newList = state.list
+      let newList = state.tasks
 
       _.remove(newList, (task) => task.id === action.payload.id)
 
-      return _.assign({}, state, {list: newList})
+      return _.assign({}, state, {tasks: newList})
     default:
       return state
   }
