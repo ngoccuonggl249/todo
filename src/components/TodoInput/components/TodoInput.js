@@ -1,17 +1,13 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
-import { setTodoList } from '../../../App/redux/action'
+import { addNewTask } from '../../../App/redux/action'
 
-const TodoInput = ({todo, setTodoList}) => {
+const TodoInput = ({addNewTask}) => {
   const [task, setTask] = useState('')
 
   const keyPressed = (event) => {
     if (event.key === "Enter") {
-      setTodoList(todo.tasks.push({
-        id: Date.now(),
-        content: task,
-        status: 'active',
-      }));
+      addNewTask(task);
       setTask('')
     }
   };
@@ -36,7 +32,7 @@ const mapPropToState = (state) => ({
 })
 
 const mapDispatchToProps = {
-  setTodoList,
+  addNewTask,
 }
 
 export default connect(mapPropToState, mapDispatchToProps)(TodoInput)

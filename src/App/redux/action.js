@@ -1,18 +1,18 @@
-export const SET_TODO_LIST = 'SET_TODO_LIST'
-export const REMOVE_TASK_TODO = 'REMOVE_TASK_TODO'
+export const ADD_NEW_TASK = 'ADD_NEW_TASK'
+export const REMOVE_TASK = 'REMOVE_TASK'
 
-export const setTodoList = (_data) => {
+export const addNewTask = (_data) => {
   return dispatch => {
     dispatch({
-      type: SET_TODO_LIST,
+      type: ADD_NEW_TASK,
       payload: _data,
     })
   }
 }
-export const removeTaskTodo = (_data) => {
+export const removeTask = (_data) => {
   return dispatch => {
     dispatch({
-      type: REMOVE_TASK_TODO,
+      type: REMOVE_TASK,
       payload: _data,
     })
   }

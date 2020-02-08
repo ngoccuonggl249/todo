@@ -1,12 +1,12 @@
 import React, { Fragment } from 'react'
 import { connect } from 'react-redux'
-import { removeTaskTodo } from '../../../App/redux/action'
+import { removeTask } from '../../../App/redux/action'
 import _ from 'lodash'
 
-const TodoList = ({todo, removeTaskTodo}) => {
+const TodoList = ({todo, removeTask}) => {
 
   const onRemoveTask = (task) => {
-    removeTaskTodo(task)
+    removeTask(task)
   };
 
 
@@ -30,7 +30,7 @@ const mapPropToState = (state) => ({
 })
 
 const mapDispatchToProps = {
-  removeTaskTodo,
+  removeTask,
 }
 
 export default connect(mapPropToState, mapDispatchToProps)(TodoList)
