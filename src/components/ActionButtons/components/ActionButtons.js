@@ -4,11 +4,6 @@ import Button  from '../../../components/Button'
 import { TASK_STATUS } from '../../../App/redux/const';
 
 const ActionButtons = ({setViewMode}) => {
-
-  const toggleAll = () => {
-    console.log('toggleAll');
-  }
-
   const showAll = () => {
     setViewMode(TASK_STATUS.all)
   }
@@ -23,9 +18,6 @@ const ActionButtons = ({setViewMode}) => {
 
   return (
     <React.Fragment>
-      <div>
-        <Button onClick={toggleAll}>Toggle All</Button>
-      </div>
       <div>
         <Button onClick={showAll}>All</Button>
         <Button onClick={showActive}>Active</Button>

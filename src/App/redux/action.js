@@ -1,4 +1,10 @@
-import { ADD_NEW_TASK, REMOVE_TASK, SET_TASK_DONE, SET_VIEW_MODE } from './const'
+import {
+  ADD_NEW_TASK,
+  REMOVE_TASK,
+  SET_TASK_DONE,
+  SET_VIEW_MODE,
+  TOGGLE_TASKS_STATUS,
+} from './const'
 
 /**
  * Add new task
@@ -52,6 +58,21 @@ export const setViewMode = (_mode) => {
     dispatch({
       type: SET_VIEW_MODE,
       payload: _mode,
+    })
+  }
+}
+
+
+/**
+ * Toggle task status : active <=> done
+ * @param _tasks {array}
+ * @returns {Function}
+ */
+export const toggleTasksStatus = (_tasks) => {
+  return dispatch => {
+    dispatch({
+      type: TOGGLE_TASKS_STATUS,
+      payload: _tasks,
     })
   }
 }
