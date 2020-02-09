@@ -1,5 +1,5 @@
 import React from 'react'
-import WithTodoRedux  from '../../../components/WithTodoRedux'
+import WithTodoRedux  from '../../../store/WithTodoRedux'
 import ViewModeButtonsView from './ViewModeButtons.view';
 
 const ViewModeButtons = ({todo, setViewMode}) => {

@@ -6,7 +6,7 @@ import {
   setTaskDone,
   setViewMode,
   toggleTasks,
-} from '../../../App/redux/action'
+} from '../redux/action'
 
 const withTodoRedux = (WrappedComponent) => {
   class HOC extends React.Component {

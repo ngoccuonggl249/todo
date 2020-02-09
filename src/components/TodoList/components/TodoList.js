@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import WithTodoRedux  from '../../../components/WithTodoRedux'
-import { TASK_STATUS } from '../../../App/redux/const'
+import WithTodoRedux  from '../../../store/WithTodoRedux'
+import { TASK_STATUS } from '../../../store/WithTodoRedux/redux/const'
 import _ from 'lodash'
 
 // View

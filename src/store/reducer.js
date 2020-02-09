@@ -1,5 +1,5 @@
 // Define the Reducers that will always be present in the application
-import TodoReducer from '../App/redux/reducer'
+import TodoReducer from './WithTodoRedux/redux/reducer'
 
 
 export const staticReducers = {

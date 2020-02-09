@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import WithTodoRedux  from '../../../components/WithTodoRedux'
+import WithTodoRedux  from '../../../store/WithTodoRedux'
 
 import TodoInputView from './TodoInput.view'
 

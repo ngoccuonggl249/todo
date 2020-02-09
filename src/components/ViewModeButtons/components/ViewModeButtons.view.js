@@ -1,6 +1,6 @@
 import React from 'react'
 import Button  from '../../../vendor/Button'
-import { TASK_STATUS } from '../../../App/redux/const'
+import { TASK_STATUS } from '../../../store/WithTodoRedux/redux/const'
 import style from '../assets/ViewModeButtons.module.scss'
 
 const ViewModeButtonsView = ({ viewMode, showViewMode }) => {
