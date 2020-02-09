@@ -10,7 +10,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: ghostwhite;
 
     .content {
       width: 100%;
@@ -23,15 +22,15 @@
         background-color: red;
         border: 1px solid red;
         color: white;
-        padding: 10px 15px;
+        padding: 12px 17px;
+        border-radius: 0 6px 6px 0;
       }
     }
 
     &.done {
-      color: red;
-
       .content {
         text-decoration: line-through;
+        color: red;
       }
     }
   }
@@ -40,7 +39,6 @@
 
 .toggle_button {
   button {
-    background-color: #ff33cc;
-    color: white;
+    background-color: #4CAF50;
   }
 }
