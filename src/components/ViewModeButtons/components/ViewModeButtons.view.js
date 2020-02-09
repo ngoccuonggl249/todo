@@ -1,5 +1,5 @@
 import React from 'react'
-import Button  from '../../../components/Button'
+import Button  from '../../../vendor/Button'
 import { TASK_STATUS } from '../../../App/redux/const'
 import style from '../assets/ViewModeButtons.module.scss'
 
