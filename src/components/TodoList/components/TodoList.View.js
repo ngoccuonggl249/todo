@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react'
 import _ from 'lodash'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
-import Button  from '../../../components/Button'
 
 import style from '../assets/TodoList.module.scss'
 
@@ -27,7 +26,7 @@ const TodoListView = ({displayTasks, removeTask, setTaskDone, toggleDisplayTasks
         </TransitionGroup>
       </div>
       <div>
-        <Button onClick={toggleDisplayTasks}>Toggle All</Button>
+        <button onClick={toggleDisplayTasks}>Toggle All</button>
       </div>
     </Fragment>
   )

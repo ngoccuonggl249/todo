@@ -1,0 +1,15 @@
+.button__item {
+  display: inline-block;
+  margin: 0 15px 0 0;
+
+  button {
+    background-color: gray;
+    color: white;
+  }
+
+  &.active {
+    button {
+      background-color: blue;
+    }
+  }
+}

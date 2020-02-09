@@ -4,7 +4,7 @@ import configureStore from '../store'
 import { PersistGate } from 'redux-persist/integration/react'
 import TodoInput from '../components/TodoInput'
 import TodoList from '../components/TodoList'
-import ActionButtons from '../components/ActionButtons'
+import ViewModeButtons from '../components/ViewModeButtons'
 
 import style from './assets/App.module.scss'
 
@@ -17,7 +17,7 @@ function App() {
         <div className={style.app__container}>
           <TodoInput />
           <TodoList />
-          <ActionButtons />
+          <ViewModeButtons />
         </div>
       </PersistGate>
     </Provider>
