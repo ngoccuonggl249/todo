@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import { connect } from 'react-redux'
-import { addNewTask } from '../../../App/redux/action'
+import WithTodoRedux  from '../../../components/WithTodoRedux'
 
 const TodoInput = ({addNewTask}) => {
   const [task, setTask] = useState('')
@@ -26,13 +25,4 @@ const TodoInput = ({addNewTask}) => {
   )
 };
 
-// Map redux
-const mapPropToState = (state) => ({
-  todo: state.todo,
-})
-
-const mapDispatchToProps = {
-  addNewTask,
-}
-
-export default connect(mapPropToState, mapDispatchToProps)(TodoInput)
+export default WithTodoRedux(TodoInput);
