@@ -7,9 +7,34 @@ const ViewModeButtonsView = ({ viewMode, showViewMode }) => {
   return (
     <React.Fragment>
       <div className={style.buttonFooter__container}>
-        <Button onClick={showViewMode} active={TASK_STATUS.all} currentActive={viewMode}>All</Button>
-        <Button onClick={showViewMode} active={TASK_STATUS.active} currentActive={viewMode}>Active</Button>
-        <Button onClick={showViewMode} active={TASK_STATUS.done} currentActive={viewMode}>Done</Button>
+
+        {/*Button All*/}
+        <Button
+          className={style.buttonFooter__item}
+          onClick={showViewMode}
+          currentActive={viewMode}
+          active={TASK_STATUS.all}
+        >All</Button>
+        {/*Button All - END*/}
+
+        {/*Button Active*/}
+        <Button
+          className={style.buttonFooter__item}
+          onClick={showViewMode}
+          currentActive={viewMode}
+          active={TASK_STATUS.active}
+        >Active</Button>
+        {/*Button Active - END*/}
+
+        {/*Button Done*/}
+        <Button
+          className={style.buttonFooter__item}
+          onClick={showViewMode}
+          currentActive={viewMode}
+          active={TASK_STATUS.done}
+        >Done</Button>
+        {/*Button Done - END*/}
+
       </div>
     </React.Fragment>
   )

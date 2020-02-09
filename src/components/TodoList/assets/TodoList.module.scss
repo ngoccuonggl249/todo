@@ -19,9 +19,12 @@
     }
 
     .close_button {
-      background-color: red;
-      border: 1px solid red;
-      color: white;
+      button {
+        background-color: red;
+        border: 1px solid red;
+        color: white;
+        padding: 10px 15px;
+      }
     }
 
     &.done {
@@ -33,4 +36,11 @@
     }
   }
 
+}
+
+.toggle_button {
+  button {
+    background-color: #ff33cc;
+    color: white;
+  }
 }
