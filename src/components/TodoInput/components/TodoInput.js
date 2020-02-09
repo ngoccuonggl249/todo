@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import WithTodoRedux  from '../../../components/WithTodoRedux'
 
-const TodoInput = ({addNewTask}) => {
+const TodoInput = ({createTask}) => {
   const [task, setTask] = useState('')
 
   const keyPressed = (event) => {
     if (event.key === "Enter") {
-      addNewTask(task);
+      createTask(task);
       setTask('')
     }
   };

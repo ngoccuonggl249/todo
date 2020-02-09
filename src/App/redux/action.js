@@ -1,5 +1,5 @@
 import {
-  ADD_NEW_TASK,
+  CREATE_TASK,
   REMOVE_TASK,
   SET_TASK_DONE,
   SET_VIEW_MODE,
@@ -11,10 +11,10 @@ import {
  * @param _content {String} Content of task
  * @returns {Function}
  */
-export const addNewTask = (_content) => {
+export const createTask = (_content) => {
   return dispatch => {
     dispatch({
-      type: ADD_NEW_TASK,
+      type: CREATE_TASK,
       payload: _content,
     })
   }
@@ -68,7 +68,7 @@ export const setViewMode = (_mode) => {
  * @param _tasks {array}
  * @returns {Function}
  */
-export const toggleTasksStatus = (_tasks) => {
+export const toggleTasks = (_tasks) => {
   return dispatch => {
     dispatch({
       type: TOGGLE_TASKS_STATUS,

@@ -6,7 +6,7 @@ import _ from 'lodash'
 // View
 import TodoListView from './TodoList.View'
 
-const TodoList = ({todo, removeTask, setTaskDone, toggleTasksStatus}) => {
+const TodoList = ({todo, removeTask, setTaskDone, toggleTasks}) => {
   const [displayTasks, setDisplayTasks] = useState([])
 
   useEffect(() => {
@@ -22,7 +22,7 @@ const TodoList = ({todo, removeTask, setTaskDone, toggleTasksStatus}) => {
 
 
   const toggleDisplayTasks = () => {
-    toggleTasksStatus(displayTasks)
+    toggleTasks(displayTasks)
   }
 
   return (

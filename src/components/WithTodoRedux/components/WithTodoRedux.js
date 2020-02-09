@@ -1,11 +1,11 @@
 import React from 'react'
 import { connect } from "react-redux"
 import {
-  addNewTask,
+  createTask,
   removeTask,
   setTaskDone,
   setViewMode,
-  toggleTasksStatus,
+  toggleTasks,
 } from '../../../App/redux/action'
 
 const withTodoRedux = (WrappedComponent) => {
@@ -26,11 +26,11 @@ const withTodoRedux = (WrappedComponent) => {
   })
 
   const mapDispatchToProps = {
-    addNewTask,
+    createTask,
     removeTask,
     setTaskDone,
     setViewMode,
-    toggleTasksStatus,
+    toggleTasks,
   }
 
   return connect(mapPropToState, mapDispatchToProps)(HOC);
