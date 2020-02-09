@@ -9,6 +9,7 @@ import TodoListView from './TodoList.View'
 const TodoList = ({todo, removeTask, setTaskDone, toggleTasks}) => {
   const [displayTasks, setDisplayTasks] = useState([])
 
+  // Effect when redux change
   useEffect(() => {
     if (todo.viewMode !== TASK_STATUS.all) {
       // Filter task status = viewMode
@@ -21,6 +22,7 @@ const TodoList = ({todo, removeTask, setTaskDone, toggleTasks}) => {
   }, [todo])
 
 
+  // Toggle task status in display
   const toggleDisplayTasks = () => {
     toggleTasks(displayTasks)
   }

@@ -6,14 +6,16 @@ import TodoInputView from './TodoInput.view'
 const TodoInput = ({createTask}) => {
   const [taskContent, setTaskContent] = useState('')
 
-  const handleKeyPressed = (event) => {
-    if (event.key === "Enter") {
+  const handleKeyPressed = (evt) => {
+    // Catch press enter
+    if (evt.key === "Enter") {
       createTask(taskContent);
       setTaskContent('')
     }
   };
 
   const handleChangeInput = (evt) => {
+    // Update taskContent input
     setTaskContent(evt.target.value)
   };
 
