@@ -1,33 +1,37 @@
-import React, { useState } from 'react'
-import { connect } from 'react-redux'
-import { addNewTask } from '../../../App/redux/action'
+import React  from 'react'
+import WithTodoRedux  from '../../../components/WithTodoRedux'
+import Button  from '../../../components/Button'
 
-const ActionButtons = ({addNewTask}) => {
-  const [task, setTask] = useState('')
+const ActionButtons = () => {
 
-  const keyPressed = (event) => {
-    if (event.key === "Enter") {
-      addNewTask(task);
-      setTask('')
-    }
-  };
+  const toggleAll = () => {
+    console.log('toggleAll');
+  }
 
-  const handleChangeInput = (evt) => {
-    setTask(evt.target.value)
-  };
+  const showAll = () => {
+    console.log('showAll');
+  }
+
+  const showActive = () => {
+    console.log('showActive');
+  }
+
+  const showDone = () => {
+    console.log('showDone');
+  }
 
   return (
-    <button />
+    <React.Fragment>
+      <div>
+        <Button onClick={toggleAll}>Toggle All</Button>
+      </div>
+      <div>
+        <Button onClick={showAll}>All</Button>
+        <Button onClick={showActive}>Active</Button>
+        <Button onClick={showDone}>Done</Button>
+      </div>
+    </React.Fragment>
   )
 };
 
-// Map redux
-const mapPropToState = (state) => ({
-  todo: state.todo,
-})
-
-const mapDispatchToProps = {
-  addNewTask,
-}
-
-export default connect(mapPropToState, mapDispatchToProps)(ActionButtons)
+export default WithTodoRedux(ActionButtons)

@@ -4,6 +4,7 @@ import configureStore from '../store'
 import { PersistGate } from 'redux-persist/integration/react'
 import TodoInput from '../components/TodoInput'
 import TodoList from '../components/TodoList'
+import ActionButtons from '../components/ActionButtons'
 
 const {store, persistor} = configureStore()
 
@@ -13,6 +14,7 @@ function App() {
       <PersistGate loading={null} persistor={persistor}>
         <TodoInput />
         <TodoList />
+        <ActionButtons />
       </PersistGate>
     </Provider>
   );
