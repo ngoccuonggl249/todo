@@ -6,15 +6,19 @@ import TodoInput from '../components/TodoInput'
 import TodoList from '../components/TodoList'
 import ActionButtons from '../components/ActionButtons'
 
+import style from './assets/App.module.scss'
+
 const {store, persistor} = configureStore()
 
 function App() {
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <TodoInput />
-        <TodoList />
-        <ActionButtons />
+        <div className={style.app__container}>
+          <TodoInput />
+          <TodoList />
+          <ActionButtons />
+        </div>
       </PersistGate>
     </Provider>
   );

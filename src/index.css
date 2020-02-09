@@ -11,3 +11,31 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+button {
+  background-color: transparent;
+  border: 1px solid;
+  padding: 10px 20px;
+  border-radius: 6px;
+}
+
+/* CSSTransition */
+.enter {
+  opacity: 0;
+}
+.enter-active {
+  opacity: 1;
+  transition: opacity 250ms ease-in-out;
+}
+.exit {
+  opacity: 1;
+}
+.exit-active {
+  opacity: 0;
+  transition: opacity 250ms ease-out;
+}
+/* CSSTransition - END */

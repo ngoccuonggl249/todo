@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 import _ from 'lodash'
+import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import Button  from '../../../components/Button'
 
 import style from '../assets/TodoList.module.scss'
@@ -8,14 +9,23 @@ const TodoListView = ({displayTasks, removeTask, setTaskDone, toggleDisplayTasks
 
   return (
     <Fragment>
-      {
-        _.map(displayTasks, (task =>
-          <div className={style[task.status]}>
-            <span onClick={() => setTaskDone(task)}>{task.content}</span>
-            <button onClick={() => removeTask(task)}>x</button>
-          </div>
-        ))
-      }
+      <div className={style.wrapper}>
+        <TransitionGroup>
+          {
+            _.map(displayTasks, (task =>
+              <CSSTransition
+                key={task.id}
+                timeout={250}
+              >
+              <div className={`${style.item} ${style[task.status]}`}>
+                <div className={style.content} onClick={() => setTaskDone(task)}>{task.content}</div>
+                <button className={style.close_button} onClick={() => removeTask(task)}>x</button>
+              </div>
+              </CSSTransition>
+            ))
+          }
+        </TransitionGroup>
+      </div>
       <div>
         <Button onClick={toggleDisplayTasks}>Toggle All</Button>
       </div>

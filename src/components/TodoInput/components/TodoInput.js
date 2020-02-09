@@ -1,26 +1,27 @@
 import React, { useState } from 'react'
 import WithTodoRedux  from '../../../components/WithTodoRedux'
 
-const TodoInput = ({createTask}) => {
-  const [task, setTask] = useState('')
+import TodoInputView from './TodoInput.view'
 
-  const keyPressed = (event) => {
+const TodoInput = ({createTask}) => {
+  const [taskContent, setTaskContent] = useState('')
+
+  const handleKeyPressed = (event) => {
     if (event.key === "Enter") {
-      createTask(task);
-      setTask('')
+      createTask(taskContent);
+      setTaskContent('')
     }
   };
 
   const handleChangeInput = (evt) => {
-    setTask(evt.target.value)
+    setTaskContent(evt.target.value)
   };
 
   return (
-    <input
-      placeholder='Enter todo name here'
-      value={task}
-      onChange={handleChangeInput}
-      onKeyPress={keyPressed}
+    <TodoInputView
+      taskContent={taskContent}
+      handleChangeInput={handleChangeInput}
+      handleKeyPressed={handleKeyPressed}
     />
   )
 };
