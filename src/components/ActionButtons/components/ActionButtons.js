@@ -1,23 +1,24 @@
 import React  from 'react'
 import WithTodoRedux  from '../../../components/WithTodoRedux'
 import Button  from '../../../components/Button'
+import { TASK_STATUS } from '../../../App/redux/const';
 
-const ActionButtons = () => {
+const ActionButtons = ({setViewMode}) => {
 
   const toggleAll = () => {
     console.log('toggleAll');
   }
 
   const showAll = () => {
-    console.log('showAll');
+    setViewMode(TASK_STATUS.all)
   }
 
   const showActive = () => {
-    console.log('showActive');
+    setViewMode(TASK_STATUS.active)
   }
 
   const showDone = () => {
-    console.log('showDone');
+    setViewMode(TASK_STATUS.done)
   }
 
   return (

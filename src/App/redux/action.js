@@ -1,6 +1,4 @@
-export const ADD_NEW_TASK = 'ADD_NEW_TASK'
-export const REMOVE_TASK = 'REMOVE_TASK'
-export const SET_TASK_DONE = 'SET_TASK_DONE'
+import { ADD_NEW_TASK, REMOVE_TASK, SET_TASK_DONE, SET_VIEW_MODE } from './const'
 
 /**
  * Add new task
@@ -40,6 +38,20 @@ export const setTaskDone = (_task) => {
     dispatch({
       type: SET_TASK_DONE,
       payload: _task,
+    })
+  }
+}
+
+/**
+ * Set View Mode
+ * @param _mode {string} : key value of TASK_STATUS
+ * @returns {Function}
+ */
+export const setViewMode = (_mode) => {
+  return dispatch => {
+    dispatch({
+      type: SET_VIEW_MODE,
+      payload: _mode,
     })
   }
 }

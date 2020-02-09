@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from "react-redux"
-import { addNewTask, removeTask, setTaskDone } from '../../../App/redux/action'
+import { addNewTask, removeTask, setTaskDone, setViewMode } from '../../../App/redux/action'
 
 const withTodoRedux = (WrappedComponent) => {
   class HOC extends React.Component {
@@ -23,6 +23,7 @@ const withTodoRedux = (WrappedComponent) => {
     addNewTask,
     removeTask,
     setTaskDone,
+    setViewMode,
   }
 
   return connect(mapPropToState, mapDispatchToProps)(HOC);

@@ -1,8 +1,15 @@
 import _ from 'lodash'
-import {ADD_NEW_TASK, REMOVE_TASK, SET_TASK_DONE} from './action'
+import {
+  TASK_STATUS,
+  ADD_NEW_TASK,
+  REMOVE_TASK,
+  SET_TASK_DONE,
+  SET_VIEW_MODE
+} from './const'
 
 const initState = {
   tasks: [],
+  viewMode: 'all',
 }
 
 export default function TodoReducer (state = initState, action) {
@@ -14,7 +21,7 @@ export default function TodoReducer (state = initState, action) {
       let initTask = {
         id: Date.now(),
         content: action.payload,
-        status: 'active',
+        status: TASK_STATUS.active,
       }
       return _.assign({}, state, state.tasks.push(initTask))
 
@@ -26,11 +33,14 @@ export default function TodoReducer (state = initState, action) {
     case SET_TASK_DONE:
       newTasks.map(task => {
         if (task.id === action.payload.id) {
-          task.status = 'done'
+          task.status = TASK_STATUS.done
         }
         return task
       });
       return _.assign({}, state, {tasks: newTasks})
+
+    case SET_VIEW_MODE:
+      return _.assign({}, state, {viewMode: action.payload})
 
     default:
       return state
